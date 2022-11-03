@@ -22,9 +22,10 @@ const userSchema = mongoose.Schema({
         minLength: [6, "Password atleast 6 characters"],
         //maxLength: [15, "Password must not be more than 15 characters"]
     },
-    userType:{
-        type: String,
-        required: [true, "Please Choose a Usertype"],
+    isAdmin: {
+        type: Boolean,
+        required: true,
+        default: false,
     },
 
 }, {
