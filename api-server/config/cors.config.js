@@ -2,7 +2,6 @@
 const whitelist = [
   "https://yourdomain.com",
   "http://127.0.0.1:5000",
-  "http://localhost:3000",
   "https://vndci-sys.vercel.app"
 ];
 
