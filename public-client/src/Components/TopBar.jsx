@@ -140,7 +140,7 @@ const TopBar = () => {
                         localStorage.removeItem("JB__U__111A");
                         dispatch(logout());
                       }}
-                      onCancel={() => {}}
+                      onCancel={() => { }}
                       placement="left"
                       okText="Yes"
                       cancelText="No"
@@ -171,9 +171,8 @@ const TopBar = () => {
       >
         <div>
           <div
-            className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${
-              location.pathname === "/" && "text-white bg-primary"
-            }`}
+            className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${location.pathname === "/" && "text-white bg-primary"
+              }`}
             onClick={() => {
               // dispatch(toggleDrawer());
               navigate("/");
@@ -188,9 +187,8 @@ const TopBar = () => {
 
           {auth.userData.permissions.items.includes("R") && (
             <div
-              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${
-                location.pathname.includes("/items") && "text-white bg-primary"
-              }`}
+              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${location.pathname.includes("/items") && "text-white bg-primary"
+                }`}
               onClick={() => {
                 // dispatch(toggleDrawer());
                 navigate("/items");
@@ -206,9 +204,8 @@ const TopBar = () => {
 
           {auth.userData.permissions.orders.includes("R") && (
             <div
-              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${
-                location.pathname === "/orders" && "text-white bg-primary"
-              }`}
+              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${location.pathname === "/orders" && "text-white bg-primary"
+                }`}
               onClick={() => {
                 navigate("/orders");
                 // dispatch(toggleDrawer());
@@ -224,9 +221,8 @@ const TopBar = () => {
 
           {auth.userData.permissions.returns.includes("R") && (
             <div
-              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${
-                location.pathname === "/returns" && "text-white bg-primary"
-              }`}
+              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${location.pathname === "/returns" && "text-white bg-primary"
+                }`}
               onClick={() => {
                 // dispatch(toggleDrawer());
                 navigate("/returns");
@@ -241,9 +237,8 @@ const TopBar = () => {
           )}
           {auth.userData.permissions.suppliers.includes("R") && (
             <div
-              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${
-                location.pathname === "/vendors" && "text-white bg-primary"
-              }`}
+              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${location.pathname === "/vendors" && "text-white bg-primary"
+                }`}
               onClick={() => {
                 // dispatch(toggleDrawer());
                 navigate("/vendors");
@@ -259,9 +254,8 @@ const TopBar = () => {
 
           {auth.userData.role === "Admin" && (
             <div
-              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${
-                location.pathname === "/logs" && "text-white bg-primary"
-              }`}
+              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${location.pathname === "/logs" && "text-white bg-primary"
+                }`}
               onClick={() => {
                 // dispatch(toggleDrawer());
                 navigate("/logs");
@@ -277,9 +271,8 @@ const TopBar = () => {
 
           {auth.userData.permissions.archives.includes("R") && (
             <div
-              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${
-                location.pathname === "/archives" && "text-white bg-primary"
-              }`}
+              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${location.pathname === "/archives" && "text-white bg-primary"
+                }`}
               onClick={() => {
                 // dispatch(toggleDrawer());
                 navigate("/archives");
@@ -295,9 +288,8 @@ const TopBar = () => {
 
           {auth.userData.role === "Admin" && (
             <div
-              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${
-                location.pathname === "/users" && "text-white bg-primary"
-              }`}
+              className={`shadow px-4 py-3 cursor-pointer rounded-m sm:my-6 my-4 flex items-center justify-between hover:bg-primary hover:text-white transition-all duration-150 ease-out ${location.pathname === "/users" && "text-white bg-primary"
+                }`}
               onClick={() => {
                 // dispatch(toggleDrawer());
                 navigate("/users");
@@ -351,19 +343,18 @@ const TopBar = () => {
                           }}
                         >
                           {item.name}
-                        </span>
-                        {"    "}
-                        will expire in{" "}
-                        <span className="text-primary">
-                          {
-                            // calculate days left with date fns
-                            differenceInDays(
-                              new Date(item?.expiry_date),
-                              new Date()
-                            )
-                          }
                         </span>{" "}
-                        days!
+                        {differenceInDays(new Date(item?.expiry_date), new Date()) <= 0 ? (
+                          "has expired!"
+                        ) : (
+                          <span>
+                            will expire in{" "}
+                            <span className="text-primary">
+                              {differenceInDays(new Date(item?.expiry_date), new Date())} days
+                            </span>
+                            !
+                          </span>
+                        )}
                       </p>
                     ) : (
                       <p className="text-lg">
@@ -375,10 +366,15 @@ const TopBar = () => {
                           }}
                         >
                           {item.name}
-                        </span>
-                        {"    "}
-                        quantity is left{" "}
-                        <span className="text-primary">{item.qty}</span>{" "}
+                        </span>{" "}
+                        {item.qty === 0 ? (
+                          "Out of Stock"
+                        ) : (
+                          <span>
+                            quantity left{" "}
+                            <span className="text-primary">{item.qty}</span>
+                          </span>
+                        )}
                       </p>
                     )}
                   </Card>
