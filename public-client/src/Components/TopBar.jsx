@@ -159,9 +159,12 @@ const TopBar = () => {
 
       <Drawer
         title={
-          <span className="font-bold text-primary text-xl md:text-2xl">
-            VNDCI-SYS
-          </span>
+          <div className="flex items-center">
+
+            <span className="font-bold text-primary text-xl md:text-2xl">
+              VNDCI-SYS
+            </span>
+          </div>
         }
         open={root.isDrawerOpen}
         closable={true}
@@ -358,24 +361,26 @@ const TopBar = () => {
                       </p>
                     ) : (
                       <p className="text-lg">
-                        <span
-                          className="text-primary underline cursor-pointer"
-                          onClick={() => {
-                            dispatch(toggleNotificationDrawer());
-                            navigate(`/items?sku=${item?.sku}`);
-                          }}
-                        >
-                          {item.name}
-                        </span>{" "}
-                        {item.qty === 0 ? (
-                          "Out of Stock"
-                        ) : (
+                        {item.qty > 0 ? (
                           <span>
-                            quantity left{" "}
-                            <span className="text-primary">{item.qty}</span>
+                            <span className="text-primary">
+                              <span
+                                className="cursor-pointer"
+                                onClick={() => {
+                                  dispatch(toggleNotificationDrawer());
+                                  navigate(`/items?sku=${item?.sku}`);
+                                }}
+                              >
+                                {item.qty}
+                              </span>{" "}
+                              {item.name} Left
+                            </span>
                           </span>
+                        ) : (
+                          <span className="text-primary">Out of Stock</span>
                         )}
                       </p>
+
                     )}
                   </Card>
                 </Badge.Ribbon>
